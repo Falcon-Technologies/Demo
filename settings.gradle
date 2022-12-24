@@ -1,0 +1,28 @@
+pluginManagement {
+    plugins{
+        id 'androidx.navigation'
+        id 'org.jetbrains.kotlin.android' version '1.7.20'
+    }
+
+    resolutionStrategy {
+        eachPlugin {
+            if (requested.id.id == 'androidx.navigation') {
+                useModule("androidx.navigation:navigation-safe-args-gradle-plugin:2.5.3")
+            }
+        }
+    }
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "Demo"
+include ':app'
